@@ -13,7 +13,7 @@ enum Direction
     Direction_RIGHT = 0b11
 };
 
-struct DirectionInd
+struct DirectionInd: public Event
 {
     static constexpr std::uint32_t MESSAGE_ID = 0x10;
 
@@ -21,7 +21,7 @@ struct DirectionInd
 };
 
 
-struct TimeoutInd
+struct TimeoutInd: public Event
 {
     static constexpr std::uint32_t MESSAGE_ID = 0x20;
 };
@@ -33,7 +33,7 @@ enum Cell
     Cell_SNAKE
 };
 
-struct DisplayInd
+struct DisplayInd: public Event
 {
     static constexpr std::uint32_t MESSAGE_ID = 0x30;
 
@@ -42,7 +42,7 @@ struct DisplayInd
     Cell value;
 };
 
-struct FoodInd
+struct FoodInd: public Event
 {
     static constexpr std::uint32_t MESSAGE_ID = 0x40;
 
@@ -50,7 +50,7 @@ struct FoodInd
     int y;
 };
 
-struct FoodReq
+struct FoodReq: public Event
 {
     static constexpr std::uint32_t MESSAGE_ID = 0x41;
 };
